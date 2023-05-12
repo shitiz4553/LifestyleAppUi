@@ -11,6 +11,9 @@ import Theme from '../src/Theme';
 import LoginScreen from '../src/screens/LoginScreen';
 import GratitudeList from '../src/screens/GratitudeList';
 import AddGratitude from '../src/screens/AddGratitude';
+import HabbitTracker from '../src/screens/HabbitTracker';
+import Accomplishments from '../src/screens/Accomplishments';
+import AddAccomp from '../src/screens/AddAccomp';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -43,6 +46,21 @@ export default function MyStack() {
           options={{ headerMode: "none" }}
           name="AddGratitude"
           component={AddGratitude}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="HabbitTracker"
+          component={HabbitTracker}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="Accomplishments"
+          component={Accomplishments}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="AddAccomp"
+          component={AddAccomp}
         />
       </Stack.Navigator>
     </NavigationContainer>

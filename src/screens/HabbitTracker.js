@@ -13,29 +13,30 @@ import Theme from "../Theme";
 import assets from '../../assets/assets'
 import Space from "../../components/Space";
 
-const tools = [
+const habbits = [
     {
-        title:'Gratitude List',
-        color:'#1B0C38',
-        navto:'GratitudeList'
+        title:'Sleep Tracker',
+        color:'#98DAAA',
     },
     {
-        title:'Mood Tracker',
+        title:'Excerise Tracker',
         color:'#836FA9'
     },
     {
-        title:'Habbit Tracker',
-        color:'#AA719C',
-        navto:'HabbitTracker'
+        title:'Food Tracker',
+        color:'#FF6B6B',
     },
     {
-        title:'Accomplishments',
-        color:'#BDBDD7',
-        navto:'Accomplishments'
+        title:'Water Tracker',
+        color:'#98A6DA'
+    },
+    {
+        title:'Habit Grid',
+        color:'#5B5B9B'
     },
 ]
 
-function ToolsScreen({navigation}){
+function HabbitTracker({navigation}){
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
@@ -46,10 +47,10 @@ function ToolsScreen({navigation}){
         </View>
         <View style={styles.body}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <Text style={styles.welcome}>Tools</Text>
+            <Text style={styles.welcome}>Habit Tracker</Text>
             <Space space={25} />
             <View style={styles.wrapper}>
-              {tools.map((item, index) => {
+              {habbits.map((item, index) => {
                 return (
                   <TouchableOpacity
                   onPress={()=>navigation.navigate(item.navto)}
@@ -64,7 +65,7 @@ function ToolsScreen({navigation}){
         </View>
       </SafeAreaView>
     );}
-export default ToolsScreen;
+export default HabbitTracker;
 
 const styles = StyleSheet.create({
     container: {

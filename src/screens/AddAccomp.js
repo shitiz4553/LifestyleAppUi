@@ -17,14 +17,14 @@ import FullButton from "../../components/FullButton";
 import FullButtonStroke from "../../components/FullButtonStroke";
 import DeleteModal from "../../components/DeleteModal";
 
-function AddGratitude({navigation}){
+function AddAccomp({navigation}){
     const [modalVisible, setModalVisible] = useState(false);
     return (
       <SafeAreaView style={styles.container}>
         <HeaderWithIcons
           handlePressTwo={() => setModalVisible(true)}
           iconTwo={"trash"}
-          title={"Gratitude List"}
+          title={"Accomplishments"}
         />
         <View style={styles.body}>
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -57,9 +57,10 @@ function AddGratitude({navigation}){
           setModalVisible={setModalVisible}
         />
 
+        
       </SafeAreaView>
     );}
-export default AddGratitude;
+export default AddAccomp;
 
 const styles = StyleSheet.create({
     container: {
@@ -80,5 +81,5 @@ const styles = StyleSheet.create({
         fontFamily:Theme.MulishBold,
         fontSize:18
     },
-
+  
 });
