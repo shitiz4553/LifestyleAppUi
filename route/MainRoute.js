@@ -18,6 +18,7 @@ import SleepTracker from '../src/screens/TrackerScreens/SleepTracker';
 import HabitGrid from '../src/screens/TrackerScreens/HabitGrid';
 import ExcerciseTracker from '../src/screens/TrackerScreens/ExcerciseTracker';
 import WaterTracker from '../src/screens/TrackerScreens/WaterTracker';
+import FoodTracker from '../src/screens/TrackerScreens/FoodTracker';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -85,6 +86,11 @@ export default function MyStack() {
           options={{ headerMode: "none" }}
           name="WaterTracker"
           component={WaterTracker}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="FoodTracker"
+          component={FoodTracker}
         />
       </Stack.Navigator>
     </NavigationContainer>
