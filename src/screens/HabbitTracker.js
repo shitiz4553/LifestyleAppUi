@@ -27,6 +27,7 @@ const habbits = [
     {
         title:'Food Tracker',
         color:'#FF6B6B',
+          navto:'FoodTracker'
     },
     {
         title:'Water Tracker',
