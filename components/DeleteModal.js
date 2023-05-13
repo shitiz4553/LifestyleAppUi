@@ -9,7 +9,7 @@ import FullButton from "./FullButton";
 import FullButtonStroke from "./FullButtonStroke";
 import Theme from "../src/Theme";
 
-function DeleteModal({modalVisible,setModalVisible,modalTitle,modalMessage}){
+function DeleteModal({modalVisible,setModalVisible,modalTitle,modalMessage,color}){
     return(
         <Modal
         animationType="slide"
@@ -28,12 +28,12 @@ function DeleteModal({modalVisible,setModalVisible,modalTitle,modalMessage}){
             </Text>
             <View style={[Theme.align,{justifyContent:'space-between',width:'100%'}]}>
               <View style={{ width: "48%" }}>
-                <FullButtonStroke color={Theme.primaryColor} label={"Confirm"} />
+                <FullButtonStroke color={color ? color : Theme.primaryColor} label={"Confirm"} />
               </View>
               <View style={{ width: "48%" }}>
                 <FullButton
                 handlePress={()=>setModalVisible(false)}
-                color={Theme.primaryColor} label={"Cancel"} />
+                color={color ? color : Theme.primaryColor} label={"Cancel"} />
               </View>
             </View>
           </View>

@@ -17,10 +17,12 @@ const habbits = [
     {
         title:'Sleep Tracker',
         color:'#98DAAA',
+        navto:'SleepTracker'
     },
     {
         title:'Excerise Tracker',
-        color:'#836FA9'
+        color:'#836FA9',
+        navto:'ExcerciseTracker'
     },
     {
         title:'Food Tracker',
@@ -32,7 +34,8 @@ const habbits = [
     },
     {
         title:'Habit Grid',
-        color:'#5B5B9B'
+        color:'#5B5B9B',
+        navto:'HabitGrid'
     },
 ]
 

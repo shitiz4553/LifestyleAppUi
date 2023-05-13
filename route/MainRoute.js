@@ -14,6 +14,9 @@ import AddGratitude from '../src/screens/AddGratitude';
 import HabbitTracker from '../src/screens/HabbitTracker';
 import Accomplishments from '../src/screens/Accomplishments';
 import AddAccomp from '../src/screens/AddAccomp';
+import SleepTracker from '../src/screens/TrackerScreens/SleepTracker';
+import HabitGrid from '../src/screens/TrackerScreens/HabitGrid';
+import ExcerciseTracker from '../src/screens/TrackerScreens/ExcerciseTracker';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -61,6 +64,21 @@ export default function MyStack() {
           options={{ headerMode: "none" }}
           name="AddAccomp"
           component={AddAccomp}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="SleepTracker"
+          component={SleepTracker}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="HabitGrid"
+          component={HabitGrid}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="ExcerciseTracker"
+          component={ExcerciseTracker}
         />
       </Stack.Navigator>
     </NavigationContainer>

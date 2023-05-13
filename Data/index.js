@@ -74,3 +74,38 @@ export const gratitudeList = [
         listTitle:'I saw some cats while i was walking the road'
     },
 ]
+
+export const exercises = [
+  {
+    label: "Running",
+    color: "#B9A9D7",
+  },
+  {
+    label: "Badminton",
+    color: "#9471AA",
+  },
+  {
+    label: "Hiking",
+    color: "#A0A0D9",
+  },
+  {
+    label: "Basketball",
+    color: "#836FA9",
+  },
+  {
+    label: "Bicycle",
+    color: "#605B9B",
+  },
+  {
+    label: "Volleyball",
+    color: "#B9A9D7",
+  },
+  {
+    label: "Swimming",
+    color: "#605B9B",
+  },
+  {
+    label: "Treadmill",
+    color: "#B9A9D7",
+  },
+];
