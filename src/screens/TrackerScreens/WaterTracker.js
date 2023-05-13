@@ -3,7 +3,6 @@ import {
     View,
     Text,
     StyleSheet,
-    SafeAreaView,
     ScrollView,
     TouchableOpacity,
 } from "react-native";
@@ -11,48 +10,40 @@ import {
 import Space from "../../../components/Space";
 import HeaderWithIcons from "../../../components/HeaderWithIcons";
 import Theme from "../../Theme";
+import WaterView from "../../../components/Waterlevel";
 
-function HabitGrid({navigation}){
+function WaterTracker({navigation}){
 
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <HeaderWithIcons
           handlePressTwo={() => setModalVisible(true)}
           iconTwo={"trash"}
           iconOne="pencil"
           title={"Habit Tracker"}
         />
+        <Text style={styles.maintext}>Water Tracker</Text>
         <View style={styles.body}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-            <TouchableOpacity>
-              <Text style={styles.maintext}>Habit Tracker</Text>
-            </TouchableOpacity>
-
-            <Space space={15} />
-
-          
-          </ScrollView>
+          <WaterView />
         </View>
-
-
-      </SafeAreaView>
+      </View>
     );}
-export default HabitGrid;
+export default WaterTracker;
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:Theme.backgroundColor
+        backgroundColor:Theme.backgroundColor,
+        paddingTop:35
     },
     body:{
         flex:7,
-        paddingHorizontal:20,
-        paddingBottom:10
     },
     maintext:{
         fontSize:45,
         fontFamily:Theme.PFRegular,
-        color:Theme.secondaryColor
+        color:Theme.secondaryColor,
+        marginLeft:25
     },
     input:{
         fontFamily:Theme.MulishBold,

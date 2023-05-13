@@ -30,7 +30,8 @@ const habbits = [
     },
     {
         title:'Water Tracker',
-        color:'#98A6DA'
+        color:'#98A6DA',
+        navto:'WaterTracker'
     },
     {
         title:'Habit Grid',

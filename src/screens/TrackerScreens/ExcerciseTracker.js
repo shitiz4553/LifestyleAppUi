@@ -20,7 +20,7 @@ import { exercises } from "../../../Data";
 function ExcerciseTracker({navigation}){
     return (
       <SafeAreaView style={styles.container}>
-        <HeaderWithIcons iconOne="pencil" title={"Tools"} />
+        <HeaderWithIcons iconOne="pencil" title={"Habit Tracker"} />
         <View style={styles.body}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <TouchableOpacity>

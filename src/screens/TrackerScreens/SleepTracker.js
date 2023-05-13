@@ -25,7 +25,7 @@ function SleepTracker({navigation}){
           handlePressTwo={() => setModalVisible(true)}
           iconTwo={"trash"}
           iconOne="pencil"
-          title={"Tools"}
+          title={"Habit Tracker"}
         />
         <View style={styles.body}>
           <ScrollView showsVerticalScrollIndicator={false}>
