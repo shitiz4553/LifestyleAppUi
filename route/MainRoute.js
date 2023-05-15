@@ -20,6 +20,7 @@ import ExcerciseTracker from '../src/screens/TrackerScreens/ExcerciseTracker';
 import WaterTracker from '../src/screens/TrackerScreens/WaterTracker';
 import FoodTracker from '../src/screens/TrackerScreens/FoodTracker';
 import DietLog from '../src/screens/DietLog';
+import AddDietLog from '../src/screens/AddDietLog';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -97,6 +98,11 @@ export default function MyStack() {
           options={{ headerMode: "none" }}
           name="DietLog"
           component={DietLog}
+        />
+        <Stack.Screen
+          options={{ headerMode: "none" }}
+          name="AddDietLog"
+          component={AddDietLog}
         />
       </Stack.Navigator>
     </NavigationContainer>

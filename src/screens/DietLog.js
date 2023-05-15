@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 
+import { Ionicons } from '@expo/vector-icons';
 import Space from "../../components/Space";
 import HeaderWithIcons from "../../components/HeaderWithIcons";
 import Theme from "../Theme";
@@ -15,6 +16,8 @@ import KcalBar from "../../components/KcalBar";
 import DeleteModal from "../../components/DeleteModal";
 import FullButton from "../../components/FullButton";
 import TimeSetter from "../../components/TimeSetter";
+import DietLogBar from "../../components/DietLogBar";
+import { foodLog } from "../../Data";
 
 
 function DietLog({navigation}){
@@ -37,7 +40,37 @@ function DietLog({navigation}){
 
             <KcalBar color={Theme.orangeColor} value={1235} maxVal={2500} />
 
+            <View style={styles.logWrapper}>
+              <View style={styles.leftFlex}>
+                <Text style={styles.label}>Food</Text>
+              </View>
+              <View style={styles.centerFlex}>
+              <Text style={styles.label}>Calories</Text>
+              </View>
+              <View style={styles.rightFlex}>
+              <Text style={styles.label}>Protien</Text>
+              </View>
+            </View>
+
+        {foodLog.map((item,index) => {
+        return (
+          <DietLogBar
+            calories={item.calories}
+            protien={item.protien}
+            key={index}
+            label={item.food}
+            sublabel={item.type}
+          />
+        );
+          })}
+
           </ScrollView>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("AddDietLog")}
+            style={styles.addBtn}
+          >
+            <Ionicons name="ios-add-sharp" size={35} color="white" />
+          </TouchableOpacity>
         </View>
 
         <DeleteModal
@@ -72,5 +105,48 @@ const styles = StyleSheet.create({
         fontFamily:Theme.MulishBold,
         fontSize:18
     },
-  
+    logWrapper:{
+      width:'100%',
+      height:45,
+      marginTop:25,
+      flexDirection:'row',
+      alignItems:'center',
+      overflow:'hidden'
+    },
+    leftFlex:{
+      height:'100%',
+      width:'50%',
+      paddingHorizontal:10,
+      justifyContent:'center'
+    },
+    centerFlex:{
+      flex:1,
+      height:'100%',
+      width:'25%',
+      alignItems:'center',
+      justifyContent:'center'
+    },
+    rightFlex:{
+      flex:1,
+      height:'100%',
+      width:'25%',
+      justifyContent:'center',
+      alignItems:'center',
+    },
+    label:{
+      fontSize:15,
+      fontFamily:Theme.MulishBold,
+      color:Theme.lightTextcolor
+    },
+    addBtn:{
+        height:65,
+        width:65,
+        borderRadius:100,
+        justifyContent: 'center',
+        alignItems:'center',
+        backgroundColor:Theme.orangeColor,
+        position:'absolute',
+        bottom:15,
+        right:25
+    }
 });

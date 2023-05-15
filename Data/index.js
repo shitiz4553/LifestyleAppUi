@@ -154,3 +154,48 @@ export const dates = [
     date: "14",
   },
 ];
+
+export const foodLog = [
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+  {
+    food: "Cereal",
+    type: "Brekfast",
+    calories: "420",
+    protien: "10.5",
+  },
+];
