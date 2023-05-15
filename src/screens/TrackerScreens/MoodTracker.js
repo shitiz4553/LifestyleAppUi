@@ -10,69 +10,50 @@ import {
 import Space from "../../../components/Space";
 import HeaderWithIcons from "../../../components/HeaderWithIcons";
 import Theme from "../../Theme";
-import { dates } from "../../../Data";
-import FoodClicker from "../../../components/FoodClicker";
-import FullButton from "../../../components/FullButton";
-import KcalTarget from "../../../components/KcalTarget";
+import { dates, moodColorChart } from "../../../Data";
+import DateClicker from "../../../components/DateClicker";
+import InfoPopup from "../../../components/InfoPopup";
 
-function FoodTracker({navigation}){
-  const [modalVisible, setModalVisible] = useState(false);
+function MoodTracker({navigation}){
+  const [modalVisible2, setModalVisible2] = useState(false);
     return (
       <SafeAreaView style={styles.container}>
         <HeaderWithIcons
-          handlePressOne={() => setModalVisible(true)}
           iconOne="pencil"
           title={"Habit Tracker"}
+          hasDots={true}
+          handlePressDots={()=>setModalVisible2(true)}
         />
         <View style={styles.body}>
-          <Text style={styles.maintext}>Food Tracker</Text>
+          <Text style={styles.maintext}>Mood Tracker</Text>
 
           <ScrollView showsVerticalScrollIndicator={false}>
             <Space space={25} />
             <View style={styles.container1}>
               <View style={styles.dateWrapper}></View>
               <View style={styles.moodWrapper}>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>B</Text>
-                </View>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>MS</Text>
-                </View>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>L</Text>
-                </View>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>AS</Text>
-                </View>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>ES</Text>
-                </View>
-                <View style={styles.moods}>
-                  <Text style={styles.label}>D</Text>
-                </View>
+                <View style={styles.moods}><Text style={styles.label}>Bad</Text></View>
+                <View style={styles.moods}><Text style={styles.label}>Neutral</Text></View>
+                <View style={styles.moods}><Text style={styles.label}>Happy</Text></View>
+                <View style={styles.moods}><Text style={styles.label}>Excellent</Text></View>
               </View>
             </View>
             {dates.map((item, index) => {
-              return <FoodClicker date={item.date} key={index} />;
+              return <DateClicker date={item.date} key={index} />;
             })}
           </ScrollView>
-          <Space space={25} />
-          <FullButton
-            handlePress={() => navigation.navigate("DietLog")}
-            color={Theme.orangeColor}
-            label={"View Diet Log"}
-          />
         </View>
 
-        <KcalTarget
-          modalTitle={"Edit Daily Target"}
-          modalVisible={modalVisible}
-          setModalVisible={setModalVisible}
-          color={Theme.greenColor}
+        <InfoPopup
+          modalTitle={"Mood Color Chart"}
+          modalVisible={modalVisible2}
+          setModalVisible={setModalVisible2}
+          data={moodColorChart}
         />
+
       </SafeAreaView>
     );}
-export default FoodTracker;
+export default MoodTracker;
 
 const styles = StyleSheet.create({
   container: {
@@ -113,7 +94,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   moods: {
-    width: "16%",
+    width: "24%",
     alignItems: "center",
   },
   label: {

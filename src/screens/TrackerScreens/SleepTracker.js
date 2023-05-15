@@ -15,13 +15,17 @@ import SleepTrackBar from "../../../components/TrackBar";
 import DeleteModal from "../../../components/DeleteModal";
 import FullButton from "../../../components/FullButton";
 import TimeSetter from "../../../components/TimeSetter";
+import EditTimePopup from "../../../components/EditTimePopup";
 
 
 function SleepTracker({navigation}){
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible2, setModalVisible2] = useState(false);
+
     return (
       <SafeAreaView style={styles.container}>
         <HeaderWithIcons
+          handlePressOne={() => setModalVisible2(true)}
           handlePressTwo={() => setModalVisible(true)}
           iconTwo={"trash"}
           iconOne="pencil"
@@ -50,6 +54,13 @@ function SleepTracker({navigation}){
           modalMessage={"Current Record will be permanently deleted. Confirm to proceed"}
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+          color={Theme.greenColor}
+        />
+
+        <EditTimePopup
+          modalTitle={"Edit Daily Target"}
+          modalVisible={modalVisible2}
+          setModalVisible={setModalVisible2}
           color={Theme.greenColor}
         />
 

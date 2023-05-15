@@ -13,14 +13,23 @@ import HeaderWithIcons from "../../../components/HeaderWithIcons";
 import Theme from "../../Theme";
 import TrackBar from "../../../components/TrackBar";
 import { exercises } from "../../../Data";
+import EditTimePopup from "../../../components/EditTimePopup";
 
 
 
 
 function ExcerciseTracker({navigation}){
+
+  const [modalVisible2, setModalVisible2] = useState(false);
+
+
     return (
       <SafeAreaView style={styles.container}>
-        <HeaderWithIcons iconOne="pencil" title={"Habit Tracker"} />
+        <HeaderWithIcons
+          handlePressOne={() => setModalVisible2(true)}
+          iconOne="pencil"
+          title={"Habit Tracker"}
+        />
         <View style={styles.body}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <TouchableOpacity>
@@ -32,19 +41,26 @@ function ExcerciseTracker({navigation}){
             <TrackBar color={"#9471AA"} maxvalue={3} hours={1} minutes={55} />
 
             <Text style={styles.label}>Add Excercise</Text>
-           <View style={styles.wrapper}>
-           {exercises.map((item,index) => {
-              return (
-                <TouchableOpacity
-                key={index}
-                  style={[styles.item, { backgroundColor: item.color }]}
-                >
-                  <Text style={styles.itemLabel}>{item.label}</Text>
-                </TouchableOpacity>
-              );
-            })}
-           </View>
+            <View style={styles.wrapper}>
+              {exercises.map((item, index) => {
+                return (
+                  <TouchableOpacity
+                    key={index}
+                    style={[styles.item, { backgroundColor: item.color }]}
+                  >
+                    <Text style={styles.itemLabel}>{item.label}</Text>
+                  </TouchableOpacity>
+                );
+              })}
+            </View>
           </ScrollView>
+
+          <EditTimePopup
+            modalTitle={"Edit Daily Target"}
+            modalVisible={modalVisible2}
+            setModalVisible={setModalVisible2}
+            color={'#9471AA'}
+          />
         </View>
       </SafeAreaView>
     );}

@@ -12,6 +12,7 @@ import {
 import Theme from "../Theme";
 import assets from '../../assets/assets'
 import Space from "../../components/Space";
+import { Ionicons } from '@expo/vector-icons';
 
 const habbits = [
     {
@@ -45,7 +46,12 @@ function HabbitTracker({navigation}){
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
+          <View style={Theme.align}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Ionicons name="arrow-back-outline" size={28} color="#7F7F7F" />
+          </TouchableOpacity> 
           <Text style={styles.date}>Tuesday 13 June</Text>
+          </View>
           <TouchableOpacity>
             <Image source={assets.jar} style={styles.jar} />
           </TouchableOpacity>

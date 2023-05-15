@@ -10,17 +10,19 @@ import {
 import Space from "../../../components/Space";
 import HeaderWithIcons from "../../../components/HeaderWithIcons";
 import Theme from "../../Theme";
-import { dates } from "../../../Data";
+import { dates, habitColorChart } from "../../../Data";
 import DateClicker from "../../../components/DateClicker";
+import InfoPopup from "../../../components/InfoPopup";
 
 function HabitGrid({navigation}){
-
+  const [modalVisible2, setModalVisible2] = useState(false);
     return (
       <SafeAreaView style={styles.container}>
         <HeaderWithIcons
           iconOne="pencil"
           title={"Habit Tracker"}
           hasDots={true}
+          handlePressDots={()=>setModalVisible2(true)}
         />
         <View style={styles.body}>
           <Text style={styles.maintext}>Habit Tracker</Text>
@@ -41,6 +43,17 @@ function HabitGrid({navigation}){
             })}
           </ScrollView>
         </View>
+
+        
+
+
+        <InfoPopup
+          modalTitle={"Habit Color Chart"}
+          modalVisible={modalVisible2}
+          setModalVisible={setModalVisible2}
+          data={habitColorChart}
+        />
+
       </SafeAreaView>
     );}
 export default HabitGrid;

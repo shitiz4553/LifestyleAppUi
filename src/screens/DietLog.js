@@ -18,14 +18,17 @@ import FullButton from "../../components/FullButton";
 import TimeSetter from "../../components/TimeSetter";
 import DietLogBar from "../../components/DietLogBar";
 import { foodLog } from "../../Data";
+import KcalTarget from "../../components/KcalTarget";
 
 
 function DietLog({navigation}){
     const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible2, setModalVisible2] = useState(false);
     return (
       <SafeAreaView style={styles.container}>
         <HeaderWithIcons
           handlePressTwo={() => setModalVisible(true)}
+          handlePressOne={() => setModalVisible2(true)}
           iconTwo={"trash"}
           iconOne="pencil"
           title={"Food Tracker"}
@@ -45,25 +48,24 @@ function DietLog({navigation}){
                 <Text style={styles.label}>Food</Text>
               </View>
               <View style={styles.centerFlex}>
-              <Text style={styles.label}>Calories</Text>
+                <Text style={styles.label}>Calories</Text>
               </View>
               <View style={styles.rightFlex}>
-              <Text style={styles.label}>Protien</Text>
+                <Text style={styles.label}>Protien</Text>
               </View>
             </View>
 
-        {foodLog.map((item,index) => {
-        return (
-          <DietLogBar
-            calories={item.calories}
-            protien={item.protien}
-            key={index}
-            label={item.food}
-            sublabel={item.type}
-          />
-        );
-          })}
-
+            {foodLog.map((item, index) => {
+              return (
+                <DietLogBar
+                  calories={item.calories}
+                  protien={item.protien}
+                  key={index}
+                  label={item.food}
+                  sublabel={item.type}
+                />
+              );
+            })}
           </ScrollView>
           <TouchableOpacity
             onPress={() => navigation.navigate("AddDietLog")}
@@ -75,10 +77,19 @@ function DietLog({navigation}){
 
         <DeleteModal
           modalTitle={"Delete Record"}
-          modalMessage={"Current Record will be permanently deleted. Confirm to proceed"}
+          modalMessage={
+            "Current Record will be permanently deleted. Confirm to proceed"
+          }
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
           color={Theme.greenColor}
+        />
+
+        <KcalTarget
+          modalTitle={"Edit Daily Target"}
+          modalVisible={modalVisible2}
+          setModalVisible={setModalVisible2}
+          color={Theme.orangeColor}
         />
 
 

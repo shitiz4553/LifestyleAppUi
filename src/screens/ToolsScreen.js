@@ -21,7 +21,8 @@ const tools = [
     },
     {
         title:'Mood Tracker',
-        color:'#836FA9'
+        color:'#836FA9',
+        navto:'MoodTracker'
     },
     {
         title:'Habbit Tracker',

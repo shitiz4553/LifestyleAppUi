@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from "@react-navigation/native";
 import assets from "../assets/assets";
 
-function HeaderWithIcons({title,handlePressOne,handlePressTwo,iconOne,iconTwo,hasDots}){
+function HeaderWithIcons({title,handlePressOne,handlePressTwo,iconOne,iconTwo,hasDots,handlePressDots}){
     const navigation = useNavigation()
     return (
       <View style={styles.container}>
@@ -24,7 +24,7 @@ function HeaderWithIcons({title,handlePressOne,handlePressTwo,iconOne,iconTwo,ha
         </View>
         <View style={Theme.align}>
           {hasDots ? (
-            <TouchableOpacity onPress={handlePressOne}>
+            <TouchableOpacity onPress={handlePressDots}>
               <Image source={assets.colordots} style={styles.dots} />
             </TouchableOpacity>
           ) : (

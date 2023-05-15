@@ -199,3 +199,41 @@ export const foodLog = [
     protien: "10.5",
   },
 ];
+
+export const habitColorChart = [
+  {
+    color:'#98DAAA',
+    label:'Sleep'
+  },
+  {
+    color:'#FF6B6B',
+    label:'Food'
+  },
+  {
+    color:'#9471AA',
+    label:'Excerise'
+  },
+  {
+    color:'#98A6DA',
+    label:'Water'
+  },
+]
+
+export const moodColorChart = [
+  {
+    color:'#FF6B6B',
+    label:'Bad'
+  },
+  {
+    color:'#FF8E6B',
+    label:'Neutral'
+  },
+  {
+    color:'#7997C3',
+    label:'Happy'
+  },
+  {
+    color:'#98DAAA',
+    label:'Excellent'
+  },
+]
